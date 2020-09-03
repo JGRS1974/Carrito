@@ -1,3 +1,19 @@
+@import 'variables';
+@import 'mixins';
+
+.html {
+    @include boxsizing(border-box);
+}
+
+*,
+*:after,
+*:before {
+    @include boxsizing(inherit);
+}
+
+body {
+    font-family: $fuente-principal;
+}
 .contenedor {
     max-width: 1100px;
     margin: 0 auto;
@@ -15,5 +31,24 @@
     .logo {
         padding: 1.4rem 0;
     }
+}
 
+.carrito-compras{
+    position: relative; /*Posiçao desde o borde do contenedor*/
+    &:hover .contenido{
+        display: block;
+        position: absolute;
+        right: 0px;
+        background-color: $gris;
+        padding: 1rem;
+        max-width: 400px;
+
+        img {
+            width: 150px;
+        }
+
+        .boton {
+            @include boton($primario);
+        }
+    }
 }

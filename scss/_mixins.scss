@@ -1,0 +1,17 @@
+
+/*Boton*/
+@mixin boton($color) {
+    background-color: $color;
+    display: block; /*Transforma o link inline-block para poder aplicar margin*/
+    text-align: center;
+    text-decoration: none; /*Remove a decoraçao do link*/
+    padding: .5rem 1rem;
+    color: $blanco;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+/*Establece box-sizing para não seja afeitado o tamanho do contenedor com os paddings*/
+@mixin boxsizing($box-model) {
+    box-sizing: $box-model;
+}
