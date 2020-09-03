@@ -2,7 +2,9 @@
 /*Fuentes*/
 /*Colores*/
 /*Boton*/
-/*Establece box-sizing para não seja afeitado o tamanho do contenedor com os paddings*/
+/*Com boxsizing inclui o borde e o padding no tamanho total do objeto*/
+/*Mixins para incluir imagens*/
+/*Inclui borde e padding no tamanho final do objeto*/
 .html {
   box-sizing: border-box;
 }
@@ -71,4 +73,65 @@ body {
   color: #ffffff;
   margin-top: 1rem;
   text-transform: uppercase;
+}
+
+.hero {
+  background-image: url("../img/hero.jpg");
+  background-repeat: no-repeat;
+  /*Ajusta a posição da imagen no contenedor left-top*/
+  background-position: center center;
+  background-size: cover;
+  /*Imagen se ajusta na largura e altura*/
+  min-height: 24rem;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contenido-hero {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.contenido-hero h2 {
+  font-weight: 400;
+  /*Grossura da leitra*/
+  font-size: 2.5rem;
+}
+
+.contenido-hero p {
+  font-size: 1.2rem;
+}
+
+.contenido-hero form {
+  width: 40%;
+  /*Largura do form*/
+  position: relative;
+}
+
+.contenido-hero form input[type="text"] {
+  width: 100%;
+  /*Largura text do form*/
+  height: 3rem;
+}
+
+.contenido-hero form input[type="submit"] {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-image: url("../img/lupa.png");
+  background-repeat: no-repeat;
+  /*Ajusta a posição da imagen no contenedor left-top*/
+  background-position: center center;
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  text-indent: -9999px;
+  border: none;
+  color: red;
 }

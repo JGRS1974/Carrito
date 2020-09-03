@@ -1,14 +1,15 @@
 @import 'variables';
 @import 'mixins';
 
+/*Inclui borde e padding no tamanho final do objeto*/
 .html {
-    @include boxsizing(border-box);
+    @include mixin-boxsizing(border-box);
 }
 
 *,
 *:after,
 *:before {
-    @include boxsizing(inherit);
+    @include mixin-boxsizing(inherit);
 }
 
 body {
@@ -48,7 +49,49 @@ body {
         }
 
         .boton {
-            @include boton($primario);
+            @include mixin-boton($primario);
+        }
+    }
+}
+
+.hero {
+    @include mixin-background-imagen('../img/hero.jpg');
+    background-size: cover;/*Imagen se ajusta na largura e altura*/
+    min-height: 24rem;
+    color: $blanco;
+    display: flex;
+    align-items: center;
+}
+
+.contenido-hero{
+    flex: 1;
+    h2{
+        font-weight: 400;/*Grossura da leitra*/
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    form {
+        width: 40%;/*Largura do form*/
+        position: relative;
+
+        input[type="text"] {
+            width: 100%;/*Largura text do form*/
+            height: 3rem;
+        }
+
+        input[type="submit"] {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            @include mixin-background-imagen('../img/lupa.png');
+            width: 3rem;
+            height: 3rem;
+            display: block;
+            text-indent: -9999px;
+            border: none;
+            color: red;
         }
     }
 }

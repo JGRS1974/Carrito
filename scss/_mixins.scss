@@ -1,6 +1,6 @@
 
 /*Boton*/
-@mixin boton($color) {
+@mixin mixin-boton($color) {
     background-color: $color;
     display: block; /*Transforma o link inline-block para poder aplicar margin*/
     text-align: center;
@@ -11,7 +11,14 @@
     text-transform: uppercase;
 }
 
-/*Establece box-sizing para não seja afeitado o tamanho do contenedor com os paddings*/
-@mixin boxsizing($box-model) {
+/*Com boxsizing inclui o borde e o padding no tamanho total do objeto*/
+@mixin mixin-boxsizing($box-model) {
     box-sizing: $box-model;
+}
+/*Mixins para incluir imagens*/
+@mixin mixin-background-imagen($imagen) {
+    background-image: url($imagen);
+    background-repeat: no-repeat;
+    /*Ajusta a posição da imagen no contenedor left-top*/
+    background-position: center center;
 }
