@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*Fuentes*/
-/*Colores*/
+/*Cores*/
+/*Tamanhos telas*/
 /*Boton*/
 /*Com boxsizing inclui o borde e o padding no tamanho total do objeto*/
 /*Mixins para incluir imagens*/
@@ -109,20 +110,25 @@ body {
 }
 
 .contenido-hero form {
-  width: 40%;
-  /*Largura do form*/
   position: relative;
 }
 
+@media only screen and (min-width: 768px) {
+  .contenido-hero form {
+    width: 40%;
+    /*Largura do form*/
+  }
+}
+
 .contenido-hero form input[type="text"] {
-  width: 100%;
+  width: 99%;
   /*Largura text do form*/
   height: 3rem;
 }
 
 .contenido-hero form input[type="submit"] {
   position: absolute;
-  top: 0px;
+  top: 3px;
   right: 0px;
   background-image: url("../img/lupa.png");
   background-repeat: no-repeat;
@@ -133,5 +139,88 @@ body {
   display: block;
   text-indent: -9999px;
   border: none;
-  color: red;
+  background-color: #ffffff;
+}
+
+.barra {
+  min-height: 6rem;
+  /*Largura da barra*/
+  padding: 1rem;
+  /*Espaço desde o borde da barra - top bottom left right*/
+  background: linear-gradient(to right, #741d51 0%, #e44e52 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*Centra os itens na barra*/
+}
+
+.barra .iconos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #ffffff;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .barra .iconos {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.barra .icono {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  /*Faz que o contenedor icono ocupe tudo o espaço do contenedor iconos*/
+  background-size: 2.5rem;
+  /*Tamanho das imagens*/
+  background-position: 5% center !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .barra .icono {
+    background-position: 20% center !important;
+    /*Posiçao da imagen do icono*/
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .barra .icono {
+    background-position: left center !important;
+  }
+}
+
+.barra .icono.icono1 {
+  background-image: url("../img/icono1.png");
+  background-repeat: no-repeat;
+  /*Ajusta a posição da imagen no contenedor left-top*/
+  background-position: center center;
+}
+
+.barra .icono.icono2 {
+  background-image: url("../img/icono2.png");
+  background-repeat: no-repeat;
+  /*Ajusta a posição da imagen no contenedor left-top*/
+  background-position: center center;
+}
+
+.barra .icono.icono3 {
+  background-image: url("../img/icono3.png");
+  background-repeat: no-repeat;
+  /*Ajusta a posição da imagen no contenedor left-top*/
+  background-position: center center;
 }

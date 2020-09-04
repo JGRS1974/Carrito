@@ -73,17 +73,20 @@ body {
         font-size: 1.2rem;
     }
     form {
-        width: 40%;/*Largura do form*/
+        
         position: relative;
+        @include mixin-tablet(){
+            width: 40%;/*Largura do form*/
+        }
 
         input[type="text"] {
-            width: 100%;/*Largura text do form*/
+            width: 99%;/*Largura text do form*/
             height: 3rem;
         }
 
         input[type="submit"] {
             position: absolute;
-            top: 0px;
+            top: 3px;
             right: 0px;
             @include mixin-background-imagen('../img/lupa.png');
             width: 3rem;
@@ -91,7 +94,46 @@ body {
             display: block;
             text-indent: -9999px;
             border: none;
-            color: red;
+            background-color: $blanco;
+        }
+    }
+}
+
+.barra {
+    min-height: 6rem; /*Largura da barra*/
+    padding: 1rem; /*Espaço desde o borde da barra - top bottom left right*/
+    @include mixin-gradient($secundario, $terciario);
+    display: flex;
+    align-items: center; /*Centra os itens na barra*/
+
+    .iconos {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        color: $blanco;
+        text-align: center;
+        @include mixin-desktop{
+            flex-direction: row;
+        }
+    }
+    .icono {
+        flex: 1; /*Faz que o contenedor icono ocupe tudo o espaço do contenedor iconos*/
+        background-size: 2.5rem; /*Tamanho das imagens*/
+        background-position: 5% center!important;
+        @include mixin-tablet{
+            background-position: 20% center!important; /*Posiçao da imagen do icono*/
+        }
+        @include mixin-desktop{
+            background-position: left center!important;
+        }
+        &.icono1{
+            @include mixin-background-imagen('../img/icono1.png');
+        }
+        &.icono2{
+            @include mixin-background-imagen('../img/icono2.png');
+        }
+        &.icono3{
+            @include mixin-background-imagen('../img/icono3.png');
         }
     }
 }
