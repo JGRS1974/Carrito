@@ -178,11 +178,9 @@ body {
         .img{
             background-size: 50%;
         }
-
         .boton {
             @include mixin-boton($secundario);
         }
-
         .precio{
             display: flex;
             justify-content: space-between;
@@ -196,9 +194,42 @@ body {
                 font-size: 1.6rem;
                 color: green;
             }
-
         }
     }
+}
 
+.footer{
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border: 1px solid darken($gris, 10);
+    .contenedor-footer{
+        display: flex;
+        flex-direction: column;
+        @include mixin-telefono() {
+            flex-direction: row;
+        }
+    }   
+}
 
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    flex: 1;
+    @include mixin-desktop(){
+        flex: 0 1 calc(20% - 1rem);
+    }
+    a {
+        text-decoration: none;
+        margin-bottom: .5rem;
+        color: $negro;
+    }
+}
+/*@extend permite estender clases e trocar propriedades*/
+.navegacion {
+    @extend .menu;/*A clase navegacion estende da clase menu*/
+
+    a {
+        color: $negro;/*Troca da cor da clase principal menu*/
+    }
 }
