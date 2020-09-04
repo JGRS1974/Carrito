@@ -100,7 +100,7 @@ body {
 }
 
 .barra {
-    min-height: 6rem; /*Largura da barra*/
+    min-height: 5.5rem; /*Largura da barra*/
     padding: 1rem; /*Espaço desde o borde da barra - top bottom left right*/
     @include mixin-gradient($secundario, $terciario);
     display: flex;
@@ -136,4 +136,69 @@ body {
             @include mixin-background-imagen('../img/icono3.png');
         }
     }
+}
+
+.encabezado {
+    text-align: center;
+}
+
+
+.cursos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    .curso{
+
+        .imagen-curso{
+            width: 100%;
+        }
+
+        flex: 0 1 calc(100% - 1rem);/*O tamanho do objeto vai ser de 100% resolução telefono*/
+        border: 1px solid darken($gris, 10); /*darken vai oscurecer o borde em 10% a cor indicada*/
+        margin-bottom: 1rem;
+
+        @include mixin-telefono() {
+            flex: 0 1 calc(50% - 1rem); /*O tamanho do objeto vai ser 50% do seu tamanho auto - resoluçao maior 480px*/
+        }
+        @include mixin-tablet() {
+            flex: 0 1 calc(33% - 1rem); /*O tamanho do objeto vai ser 33% do seu tamanho auto - resolução maior a 768px*/
+        }
+        
+        @include mixin-desktop() {
+            flex: 0 1 calc(25% - 1rem); /*O tamanho do objeto vai ser 25% do seu tamanho auto - resolução maior a 1060px*/
+        }        
+                
+    }
+
+    .info-curso {
+        padding: 1rem;
+        margin: 0;
+
+        .img{
+            background-size: 50%;
+        }
+
+        .boton {
+            @include mixin-boton($secundario);
+        }
+
+        .precio{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+
+            .regular{
+                text-decoration: line-through;
+            }
+            .oferta{
+                font-weight: 700;
+                font-size: 1.6rem;
+                color: green;
+            }
+
+        }
+    }
+
+
 }
